@@ -24,7 +24,7 @@ namespace KellyFord.Prompt.Commands
 
         public ConsoleResultModel Run()
         {
-            return new ConsoleResultModel("Success!");
+            return new ConsoleResultModel(System.DateTime.Now.ToString()) { };
         }
     }
 }
