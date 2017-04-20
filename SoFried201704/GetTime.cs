@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Dnn.PersonaBar.Prompt.Models;
-using DotNetNuke.Entities.Portals;
+﻿using Dnn.PersonaBar.Prompt.Attributes;
 using Dnn.PersonaBar.Prompt.Common;
 using Dnn.PersonaBar.Prompt.Interfaces;
+using Dnn.PersonaBar.Prompt.Models;
+using DotNetNuke.Entities.Portals;
 using DotNetNuke.Entities.Users;
-using Dnn.PersonaBar.Prompt.Attributes;
 
 namespace KellyFord.Prompt.Commands
 {
