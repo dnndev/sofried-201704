@@ -12,13 +12,16 @@ namespace KellyFord.Prompt.Commands
     [ConsoleCommand("list-herbs", "kf", "Returns a list of edible plants", new string[] { })]
     public class ListHerbs : ConsoleCommandBase, IConsoleCommand
     {
-          public string ValidationMessage { get; private set; }
+        private const string FLAG_NAME = "name";
+
+        private string Name { get; set; }
+
+        public string ValidationMessage { get; private set; }
 
         public void Init(string[] args, PortalSettings portalSettings, UserInfo userInfo, int activeTabId)
         {
             base.Initialize(args, portalSettings, userInfo, activeTabId);
             System.Text.StringBuilder sbErrors = new System.Text.StringBuilder();
-
 
             ValidationMessage = sbErrors.ToString();
         }
@@ -52,10 +55,23 @@ namespace KellyFord.Prompt.Commands
                             new string[] { "Wild Mountain Thyme - The Chieftains",
                                            "Purple Heather - Rod Steward" }));
 
-            return new ConsoleResultModel(herbs.Count + " herbs found") {
-                data = herbs,
-                fieldOrder = new string[] { "ScientificName", "Name", "Description" }
-            };
+            if (HasFlag(FLAG_NAME))
+            {
+                string searchTerm = Flag(FLAG_NAME, "");
+                // try to find the herb in our list
+                HerbModel herb = herbs.Find( x => x.Name.Contains(searchTerm) || x.ScientificName.Contains(searchTerm));
+                List<HerbModel> results = new List<HerbModel>();
+                results.Add(herb);
+                return new ConsoleResultModel() { data = results };
+            }
+            else
+            {
+                return new ConsoleResultModel(herbs.Count + " herbs found")
+                {
+                    data = herbs,
+                    fieldOrder = new string[] { "ScientificName", "Name", "Description" }
+                };
+            }
         }
     }
 }
