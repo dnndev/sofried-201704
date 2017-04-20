@@ -7,8 +7,8 @@
     <ProjectGuid>{C8BF7736-D20E-49C7-BD05-2D72BF217BFE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SoFried201704</RootNamespace>
-    <AssemblyName>SoFried201704</AssemblyName>
+    <RootNamespace>KellyFord.Prompt</RootNamespace>
+    <AssemblyName>KellyFord.Prompt</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

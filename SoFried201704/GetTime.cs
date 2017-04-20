@@ -13,7 +13,7 @@ using Dnn.PersonaBar.Prompt.Attributes;
 namespace KellyFord.Prompt.Commands
 {
     [ConsoleCommand("get-time", "kf", "Returns the Server Time", new string[] { })]
-    class GetTime : ConsoleCommandBase, IConsoleCommand
+    public class GetTime : ConsoleCommandBase, IConsoleCommand
     {
         public string ValidationMessage { get; }
 
