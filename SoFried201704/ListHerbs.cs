@@ -52,7 +52,10 @@ namespace KellyFord.Prompt.Commands
                             new string[] { "Wild Mountain Thyme - The Chieftains",
                                            "Purple Heather - Rod Steward" }));
 
-            return new ConsoleResultModel(herbs.Count + " herbs found") { data = herbs };
+            return new ConsoleResultModel(herbs.Count + " herbs found") {
+                data = herbs,
+                fieldOrder = new string[] { "ScientificName", "Name", "Description" }
+            };
         }
     }
 }
