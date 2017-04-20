@@ -11,7 +11,8 @@ namespace KellyFord.Prompt.Commands
     public class GetTime : ConsoleCommandBase, IConsoleCommand
     {
         private const string FLAG_FORMAT = "format";
-        public string Format { get; private set; }
+
+        private string Format { get; set; }
 
         public string ValidationMessage { get; }
 
