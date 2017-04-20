@@ -7,7 +7,7 @@ using DotNetNuke.Entities.Users;
 
 namespace KellyFord.Prompt.Commands
 {
-    [ConsoleCommand("get-time", "kf", "Returns the Server Time", new string[] { })]
+    [ConsoleCommand("get-time", "kf", "Returns the Server Time", new string[] { "format" })]
     public class GetTime : ConsoleCommandBase, IConsoleCommand
     {
         private const string FLAG_FORMAT = "format";
