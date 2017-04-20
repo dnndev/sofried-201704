@@ -14,11 +14,12 @@ namespace KellyFord.Prompt.Commands
 
         private string Format { get; set; }
 
-        public string ValidationMessage { get; }
+        public string ValidationMessage { get; private set; }
 
         public void Init(string[] args, PortalSettings portalSettings, UserInfo userInfo, int activeTabId)
         {
             base.Initialize(args, portalSettings, userInfo, activeTabId);
+            System.Text.StringBuilder sbErrors = new System.Text.StringBuilder();
 
             // Format Flag:
             // ------------------
@@ -35,8 +36,11 @@ namespace KellyFord.Prompt.Commands
             else
             {
                 // no Format flag found - use a default of 'F' for full date formatting
-                Format = "F";
+                // Format = "F";
+                sbErrors.AppendFormat("You must pass a value in for the '{0}' flag", FLAG_FORMAT);
             }
+
+            ValidationMessage = sbErrors.ToString();
         }
 
         public bool IsValid()
