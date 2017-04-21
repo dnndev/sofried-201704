@@ -54,6 +54,11 @@ namespace KellyFord.Prompt.Commands
                             "Thyme is a low growing (6-12 inches tall) to almost prostrate, wiry stemmed perennial.",
                             new string[] { "Wild Mountain Thyme - The Chieftains",
                                            "Purple Heather - Rod Steward" }));
+            herbs.Add(new HerbModel("Marijuana",
+                            "Cannabis",
+                            "Good stuff - medical purposes only of course!",
+                            new string[] { "The Chronic - Dr Dre",
+                                           "Purple Haze - Jimi Hendrix" }));
 
             if (HasFlag(FLAG_NAME))
             {
